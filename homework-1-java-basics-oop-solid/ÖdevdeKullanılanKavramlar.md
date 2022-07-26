@@ -1,0 +1,11 @@
+[Final](src/main/java/com/fatura/database/CompanyDatabase.java)
+[static](src/main/java/com/fatura/App.java)
+[overload](src/main/java/com/fatura/database/CustomerDatabase.java)
+[override](src/main/java/com/fatura/database/CustomerDatabase.java)
+[constructor]()
+[kalıtım]()
+[polimorfizim](src/main/java/com/fatura/database/Database.java)
+[encapsulation](src/main/java/com/fatura/database/Database.java)
+[List](src/main/java/com/fatura/database/Database.java)
+Set
+Map

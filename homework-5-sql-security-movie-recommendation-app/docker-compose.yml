@@ -1,0 +1,42 @@
+version: "3.3"
+services:
+  movies:
+    build: movies
+    ports:
+      - "8080:8080"
+
+  movies-payment-service:
+    build:  movies-payment-service
+
+  movies-email-service:
+    build:  movies-email-service
+    
+  movies_db:
+    container_name: movies-db
+    image: postgres:latest
+    # ports:
+      # - "5433:5432"
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD:  pgpassword
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "15672:15672"
+      # - "5672:5672"
+    environment:
+      RABBITMQ_DEFAULT_USER: admin
+      RABBITMQ_DEFAULT_PASS: 123456
+
+  email-db:
+    image: mongo
+
+  pg-admin:
+    image: dpage/pgadmin4
+    ports:
+      - "5050:80"
+    environment:
+      PGADMIN_DEFAULT_PASSWORD: admin
+      PGADMIN_DEFAULT_EMAIL: pgadmin4@pgadmin.org
